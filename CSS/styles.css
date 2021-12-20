@@ -1,0 +1,9 @@
+.form-group .form-control {
+    width: 70%;
+}
+.custom-select.my-1.mr-sm-2 {
+    width: 50%;
+}
+.form-group .custom-select {
+    width: 70%;
+}
