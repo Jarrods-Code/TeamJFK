@@ -17,15 +17,38 @@ function validFormFieldInput(data)
     
 
 
+
+
+        
 }
 
+function displayTodayDate()
+{
+    const  dateElement = document.querySelector("#DateElement");
+
+    const today = new Date();
+
+    const Dayparts = {
+      year: today.getFullYear(),
+      month: today.getMonth() + 1,
+      day: today.getDate(),
+    };
+
+    dateElement.innerHTML = Dayparts.day + '/' + Dayparts.month + '/' + Dayparts.year + '';
+}
+
+
+displayTodayDate();
 
 const form = document.querySelector("#new-task-form");
 
 form.addEventListener("submit", (event) => {
 
-    let validateNameStr = document.querySelector("#TaskName");
-    let validateName = validateNameStr;  //.value.trim();
+    // let validateNameStr = document.querySelector("#TaskName").value + '';
+
+    // let validateName = validateNameStr;
+    
+    let validateName = document.querySelector("#TaskName");
 
 //   validateName = validateName.trim();
     const validateDescription = document.querySelector("#TaskDescription");
