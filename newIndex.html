@@ -123,6 +123,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
+
                 <h2>Task List As on <span id="DateElement"> </span></h2> 
                 <p>
                     <span>
@@ -149,93 +150,97 @@
 
 
                 </p><br /><br />
-                <ul class="list-group" id="tasksList">
 
-                    <li class="list-group-item">
-                        <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
-                            <h5>Study HTML</h5>
-                            <span class="badge badge-progress">In Progress</span>
-                        </div>
-                        <div class="d-flex w-100 mb-3 justify-content-between">
-                            <small>Assigned To: Jarrod</small>
-                            <small>Due: 12/12/2021</small>
-                        </div>
-                        <p>Study HTML 5.0 latest version</p>
-                        <p><button class="edit btn btn-info btn-sm" name="edit"><a
-                                    style="text-decoration: none; color:white" href="EditTask.html">EDIT</a></button>
-                            <button class="delete btn btn-info btn-sm" name="delete">DELETE</button>
-                        </p>
-                    </li>
-                </ul>
-                <ul class="list-group" id="tasksList">
-                    <li class="list-group-item">
-                        <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
-                            <h5>web page wireframe</h5>
-                            <span class="badge badge-progress">Review</span>
-                        </div>
-                        <div class="d-flex w-100 mb-3 justify-content-between">
-                            <small>Assigned To: Fransiskus</small>
-                            <small>Due: 12/12/2021</small>
-                        </div>
-                        <p>design and produce web page wireframe</p>
-                        <p><button class="edit btn btn-info btn-sm" name="edit"><a
-                                    style="text-decoration: none; color:white" href="EditTask.html">EDIT</a></button>
-                            <button class="delete btn btn-info btn-sm" name="delete">DELETE</button>
-                        </p>
-                    </li>
-                </ul>
-                <ul class="list-group" id="tasksList">
-                    <li class="list-group-item">
-                        <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
-                            <h5>client sign</h5>
-                            <span class="badge badge-progress">In Progress</span>
-                        </div>
-                        <div class="d-flex w-100 mb-3 justify-content-between">
-                            <small>Assigned To: Fransiskus</small>
-                            <small>Due: 12/12/2021</small>
-                        </div>
-                        <p>Client sign off on approval</p>
-                        <p><button class="edit btn btn-info btn-sm" name="edit"><a
-                                    style="text-decoration: none; color:white" href="EditTask.html">EDIT</a></button>
-                            <button class="delete btn btn-info btn-sm" name="delete">DELETE</button>
-                        </p>
-                    </li>
-                </ul>
-                <ul class="list-group" id="tasksList">
-                    <li class="list-group-item">
-                        <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
-                            <h5>website functionalities</h5>
-                            <span class="badge badge-progress">Review</span>
-                        </div>
-                        <div class="d-flex w-100 mb-3 justify-content-between">
-                            <small>Assigned To: Fransiskus</small>
-                            <small>Due: 12/12/2021</small>
-                        </div>
-                        <p>working on functionality of website</p>
-                        <p><button class="edit btn btn-info btn-sm" name="edit"><a
-                                    style="text-decoration: none; color:white" href="EditTask.html">EDIT</a></button>
-                            <button class="delete btn btn-info btn-sm" name="delete">DELETE</button>
-                        </p>
-                    </li>
-                </ul>
-                <ul class="list-group" id="tasksList">
-                    <li class="list-group-item">
-                        <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
-                            <h5>client requirements for app</h5>
-                            <span class="badge badge-progress">In Progress</span>
-                        </div>
-                        <div class="d-flex w-100 mb-3 justify-content-between">
-                            <small>Assigned To: Kevin</small>
-                            <small>Due: 12/12/2021</small>
-                        </div>
-                        <p>Discuss client requirements for app</p>
-                        <p><button class="edit btn btn-info btn-sm" name="edit"><a
-                                    style="text-decoration: none; color:white" href="EditTask.html">EDIT</a></button>
-                            <button class="delete btn btn-info btn-sm" name="delete">DELETE</button>
-                        </p>
-                    </li>
-                </ul>
+<!-- to do task details -->
+                <div id="taskManager">
 
+                    <ul class="list-group" id="tasksList">
+
+                        <li class="list-group-item">
+                            <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
+                                <h5>Study HTML</h5>
+                                <span class="badge badge-progress">In Progress</span>
+                            </div>
+                            <div class="d-flex w-100 mb-3 justify-content-between">
+                                <small>Assigned To: Jarrod</small>
+                                <small>Due: 12/12/2021</small>
+                            </div>
+                            <p>Study HTML 5.0 latest version</p>
+                            <p><button class="edit btn btn-info btn-sm" name="edit"><a
+                                        style="text-decoration: none; color:white" href="EditTask.html">EDIT</a></button>
+                                <button class="delete btn btn-info btn-sm" name="delete">DELETE</button>
+                            </p>
+                        </li>
+                    </ul>
+                    <ul class="list-group" id="tasksList">
+                        <li class="list-group-item">
+                            <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
+                                <h5>web page wireframe</h5>
+                                <span class="badge badge-progress">Review</span>
+                            </div>
+                            <div class="d-flex w-100 mb-3 justify-content-between">
+                                <small>Assigned To: Fransiskus</small>
+                                <small>Due: 12/12/2021</small>
+                            </div>
+                            <p>design and produce web page wireframe</p>
+                            <p><button class="edit btn btn-info btn-sm" name="edit"><a
+                                        style="text-decoration: none; color:white" href="EditTask.html">EDIT</a></button>
+                                <button class="delete btn btn-info btn-sm" name="delete">DELETE</button>
+                            </p>
+                        </li>
+                    </ul>
+                    <ul class="list-group" id="tasksList">
+                        <li class="list-group-item">
+                            <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
+                                <h5>client sign</h5>
+                                <span class="badge badge-progress">In Progress</span>
+                            </div>
+                            <div class="d-flex w-100 mb-3 justify-content-between">
+                                <small>Assigned To: Fransiskus</small>
+                                <small>Due: 12/12/2021</small>
+                            </div>
+                            <p>Client sign off on approval</p>
+                            <p><button class="edit btn btn-info btn-sm" name="edit"><a
+                                        style="text-decoration: none; color:white" href="EditTask.html">EDIT</a></button>
+                                <button class="delete btn btn-info btn-sm" name="delete">DELETE</button>
+                            </p>
+                        </li>
+                    </ul>
+                    <ul class="list-group" id="tasksList">
+                        <li class="list-group-item">
+                            <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
+                                <h5>website functionalities</h5>
+                                <span class="badge badge-progress">Review</span>
+                            </div>
+                            <div class="d-flex w-100 mb-3 justify-content-between">
+                                <small>Assigned To: Fransiskus</small>
+                                <small>Due: 12/12/2021</small>
+                            </div>
+                            <p>working on functionality of website</p>
+                            <p><button class="edit btn btn-info btn-sm" name="edit"><a
+                                        style="text-decoration: none; color:white" href="EditTask.html">EDIT</a></button>
+                                <button class="delete btn btn-info btn-sm" name="delete">DELETE</button>
+                            </p>
+                        </li>
+                    </ul>
+                    <ul class="list-group" id="tasksList">
+                        <li class="list-group-item">
+                            <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
+                                <h5>client requirements for app</h5>
+                                <span class="badge badge-progress">In Progress</span>
+                            </div>
+                            <div class="d-flex w-100 mb-3 justify-content-between">
+                                <small>Assigned To: Kevin</small>
+                                <small>Due: 12/12/2021</small>
+                            </div>
+                            <p>Discuss client requirements for app</p>
+                            <p><button class="edit btn btn-info btn-sm" name="edit"><a
+                                        style="text-decoration: none; color:white" href="EditTask.html">EDIT</a></button>
+                                <button class="delete btn btn-info btn-sm" name="delete">DELETE</button>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="col"></div>
         </div>
@@ -253,7 +258,43 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 
-    <script defer src="./js/index.js"></script>
+    <script  src="./js/index.js"></script>
+
+    <script>
+        
+        function displayTasks() {
+
+            let taskStr = `<ul class="list-group" id="tasksList">
+
+                        <li class="list-group-item">
+                            <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
+                                <h5>Study HTML</h5>
+                                <span class="badge badge-progress">In Progress</span>
+                            </div>
+                            <div class="d-flex w-100 mb-3 justify-content-between">
+                                <small>Assigned To: Jarrod</small>
+                                <small>Due: 12/12/2021</small>
+                            </div>
+                            <p>Study HTML 5.0 latest version</p>
+                            <p><button class="edit btn btn-info btn-sm" name="edit"><a
+                                        style="text-decoration: none; color:white" href="EditTask.html">EDIT</a></button>
+                                <button class="delete btn btn-info btn-sm" name="delete">DELETE</button>
+                            </p>
+                        </li>
+                    </ul>`
+            
+            return taskStr;
+        }
+        
+        let newTasks = document.getElementById("taskManager");
+        newTasks.innerHTML =  displayTasks();
+
+
+
+
+
+
+    </script>
 
 </body>
 
