@@ -117,7 +117,7 @@ class taskManager {
   displayTaskList() {
 
     let newTasks = document.getElementById("taskManager"); 
-    let newTasksString;
+    let newTasksString="";
 
     
     for (let i = 0; i < this.taskList.length; i++) {
