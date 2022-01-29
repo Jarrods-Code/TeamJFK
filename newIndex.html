@@ -25,6 +25,11 @@
     <div class="container">
 
         <h1>Add Task</h1>
+        <!--Current date-->
+        <h2><span id="DateElement"> </span></h2> 
+                <p>
+                    <span>
+                </p><br /><br />
         <!-- <button type="button" class="btn btn-outline-primary">Add Task</button> -->
         <form id="new-task-form" novalidate>
 
@@ -37,7 +42,8 @@
                     <div class="invalid-feedback">
                         The task name should be more than 5 characters
                     </div>
-                   <div class="valid-feedback">Looks good!</div>
+                    <!--- Removed valid error message
+                   <div class="valid-feedback">Looks good!</div>  -->
                 </div>
 
 
@@ -53,7 +59,8 @@
                     <div class="invalid-feedback">
                         The task description should be more than 5 characters
                     </div>
-                    <div class="valid-feedback">Looks good!</div>
+                    <!-- Removed valid error message
+                    <div class="valid-feedback">Looks good!</div>   -->
                 
                 </div>
 
@@ -74,7 +81,8 @@
                         <div class="invalid-feedback">
                             The Assigned To task should be more than 5 characters
                         </div>
-                       <div class="valid-feedback">Looks good!</div>
+                        <!----Removed valid error message
+                       <div class="valid-feedback">Looks good!</div>  -->
                     </div>
                     <div class="input-group date" data-provide="datepicker">
                         <label for="DueDate" class="col-sm-2 col-form-label">Due Date:</label>
@@ -99,14 +107,21 @@
                     <div class="invalid-feedback">
                         Status must be selected
                     </div>
-                    <div class="valid-feedback">Looks good!</div>
+                    <!-- Removed valid error message
+                    <div class="valid-feedback">Looks good!</div>   -->
                 </div>
                 
             </div>
             <div class="form-group row align-items-center justify-content-center">
                 <div class="col-sm-5">
-                    <button type="submit" class="btn btn-primary ml-5 mt-5 mb-5" >Submit / Add New Task</button>
+                    <button type="submit" class="btn btn-primary ml-5 mt-5 mb-5" onclick="myFunction()" value="Reset form" >Add New Task</button>
                 </div>
+                <!-- Function to clear form on submit
+                <script>
+                    function myFunction() {
+                      document.getElementById("myForm").reset();
+                    }
+                </script> ----> 
             </div>
         </form>
     </div>
@@ -123,10 +138,10 @@
     <div class="container">
         <div class="row">
             <div class="col">
-
+                <!-- Date part 1 with part 2
                 <h2>Task List As on <span id="DateElement"> </span></h2> 
                 <p>
-                    <span>
+                    <span> -->
 
                         <!-- <div class="">
                   <a href="AddTask.html">test</a>
@@ -149,7 +164,7 @@
                         <!-- <button type="button" class="btn btn-primary float-left" id="addTaskBtn">Add New Task</button></span> -->
 
 
-                </p><br /><br />
+               <!--Date part 2 </p><br /><br />    -->
 
 <!-- to do task details -->
                 <div id="taskManager">
