@@ -243,6 +243,17 @@ let validationFail = 0;
 
       taskMgr.displayTaskList();
 
+        validateName.value = "";
+
+        validateDescription.value = "";
+
+        validateAssignedTo.value = "";
+
+        validateDueDate.value = "";
+
+        validateStatus.value = "";
+        
+
       console.log("end");
 
 
