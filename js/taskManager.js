@@ -1,84 +1,118 @@
 
-// class Task {
-//   // constructor(taskName, taskDescription, taskStatus, taskOwner, taskDueDate)
-//   // {
-//   //     taskName;
-//   //     taskDescription;
-//   //     taskStatus;
-//   //     taskOwner;
-//   //     taskDueDate;
-//   // }
-
-//   constructor(taskName, taskDescription) {
-//     this.taskName = taskName;
-//     this.taskDescription = taskDescription;
-    
-//   }
-
-//   // function saveTask
-// }
 
 
+// task class
+class Task {
+  constructor(
+    taskId,
+    taskName,
+    taskDescription,
+    taskStatus,
+    taskOwner,
+    taskDueDate
+  ) {
+    this.Id = taskId;
+    this.taskName = taskName;
+    this.taskDescription = taskDescription;
+    this.taskStatus = taskStatus;
+    this.taskOwner = taskOwner;
+
+    const dateFormat = { year: "numeric", month: "long", day: "numeric" };
+    const dueDate = new Date(taskDueDate);
+    const formattedDate = dueDate.toLocaleDateString("en-AU", dateFormat);
+    this.taskDueDate = formattedDate;
+  }
+
+  
+}
 
 
-
-// class taskManager 
-// {
-//     static currentID = 0;
-
-//     constructor()
-//     {
-//       this.currentID += 1;
-//       console.log(this.currentID);
-//       this.taskList = [];
-
-//       // let t1 = new Task("name", "description");
-//     //   this.taskList.push(t1);
-
-//     }
-
-//     saveTask(task)
-//     {
-//             this.taskList.push(task);
-//     }
-
-//     displayTask()
-//     {
-//         this.taskList.forEach
-//         (
-            
-
-//             (tsk) => {
+//task manager class
 
 
-//                 console.log("for each starrt");
-//                 // console.log(tsk);
+class taskManager {
+  //   static currentID = 0;
 
-//                  console.log('id: ' + tsk.currentID, tsk.taskName, tsk.taskDescription);    
+  constructor(currentId = 0) {
+    this.currentID = currentId;
 
-//             }
+    //initialize array to save new tasks
+    this.taskList = [];
 
-           
-//         )
-//     }
+    console.log(
+      "value of task array when task Manager is initialized: ",
+      this.taskList
+    );
 
-// }
+    console.log("initialize task manager, tasks init state: ", this.taskList);
+  }
 
-// // let t1 = new Task("name" ,"description");  //id = 1
+  validFormFieldInput(
+    taskName,
+    taskDescription,
+    taskOwner,
+    dueDate,
+    taskStatus
+  ) {}
 
-// // let t2 = new Task("name2", "description2");  // id =2 ??
+  //add new task
+  addTask(taskName, taskDescription, taskStatus, taskOwner, taskDueDate) {
+    this.currentID += 1;
 
-// // let t2 = new Task("name2", "description2");  // id =  ???
+    //create task object using task class
+    const task = new Task(
+      this.currentID,
+      taskName,
+      taskDescription,
+      taskStatus,
+      taskOwner,
+      taskDueDate
+    );
 
-// // let mgr = new taskManager(t1);
+    this.taskList.push(task);
 
-// // mgr.saveTask(t1);
+    console.log("new task added to taskList array: ", task);
+  }
 
-// // mgr.saveTask(t2);
+  createTaskHtml(task) {
+    let taskStr = `<ul class="list-group" id="tasksList">
 
-// // mgr.displayTask();
+                        <li class="list-group-item">
+                            <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
+                                <h5>${task.taskName}</h5>
+                                <span class="badge badge-progress">${task.taskStatus}</span>
+                            </div>
+                            <div class="d-flex w-100 mb-3 justify-content-between">
+                                <small>Assigned To: ${task.taskOwner}</small>
+                                <small>Due: ${task.taskDueDate}</small>
+                            </div>
+                            <p>${task.taskDescription}</p>
+                            <p><button class="edit btn btn-info btn-sm" name="edit"><a
+                                        style="text-decoration: none; color:white" href="EditTask.html">EDIT</a></button>
+                                <button class="delete btn btn-info btn-sm" name="delete">DELETE</button>
+                            </p>
+                        </li>
+                    </ul>`;
 
-// // console.log("tset");
+    return taskStr;
+  }
 
+  render() {
+    let tasksHtmlList = [];
+    let newTasks = document.getElementById("taskManager");
+    let taskHTML = "";
 
+    for (let i = 0; i < this.taskList.length; i++) {
+      let currentTask = this.taskList[i];
 
+      taskHTML = this.createTaskHtml(currentTask);
+      console.log(taskHTML);
+
+      tasksHtmlList.push(taskHTML);
+    }
+
+    taskHTML = tasksHtmlList.join("\n");
+
+    newTasks.innerHTML = taskHTML;
+  }
+}
