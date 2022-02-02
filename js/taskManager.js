@@ -87,9 +87,9 @@ class taskManager {
                                 <small>Due: ${task.taskDueDate}</small>
                             </div>
                             <p>${task.taskDescription}</p>
-                            <p><button class="edit btn btn-info btn-sm" name="edit"><a
+                            <p><button class="edit btn btn-secondary btn-sm" name="edit"><a
                                         style="text-decoration: none; color:white" href="EditTask.html">EDIT</a></button>
-                                <button class="delete btn btn-info btn-sm" name="delete">DELETE</button>
+                                <button class="delete btn btn-secondary btn-sm" name="delete">DELETE</button>
                             </p>
                         </li>
                     </ul>`;
