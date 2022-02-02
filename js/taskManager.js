@@ -11,7 +11,7 @@ class Task {
     taskOwner,
     taskDueDate
   ) {
-    this.Id = taskId;
+    this.taskId = taskId;
     this.taskName = taskName;
     this.taskDescription = taskDescription;
     this.taskStatus = taskStatus;
@@ -70,14 +70,20 @@ class taskManager {
     );
 
     this.taskList.push(task);
-
     console.log("new task added to taskList array: ", task);
+
+    //save to local storage
+    this.save(); 
+    console.log("array content saved in local storage", this.taskList);
+
+
   }
 
   createTaskHtml(task) {
-    let taskStr = `<ul class="list-group" id="tasksList">
+    // <ul class="list-group" id="task-list">  </ul>
 
-                        <li class="list-group-item">
+    let taskStr = `
+                        <li class="list-group-item" data-task-id="${task.taskId}">
                             <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
                                 <h5>${task.taskName}</h5>
                                 <span class="badge badge-progress">${task.taskStatus}</span>
@@ -87,19 +93,84 @@ class taskManager {
                                 <small>Due: ${task.taskDueDate}</small>
                             </div>
                             <p>${task.taskDescription}</p>
+<<<<<<< HEAD
                             <p><button class="edit btn btn-secondary btn-sm" name="edit"><a
                                         style="text-decoration: none; color:white" href="EditTask.html">EDIT</a></button>
                                 <button class="delete btn btn-secondary btn-sm" name="delete">DELETE</button>
+=======
+                            <p>
+                                <button class="done-button btn btn-info btn-sm " name="done" type="button">Done</button>
+                                <button class="delete btn btn-info btn-sm" name="delete">DELETE</button>
+>>>>>>> f7ef270e7a7fc33de57c0a789913c90ee2677188
                             </p>
                         </li>
-                    </ul>`;
+                    `;
 
     return taskStr;
   }
 
+  getTaskById(taskId) {
+    let foundTask;
+
+    for (const tsk of this.taskList) {
+      console.log("current task ", tsk);
+
+      if (Number(taskId) == Number(tsk.taskId)) {
+        foundTask = tsk;
+        console.log("task found in array ", tsk);
+
+        //update the status
+        tsk.taskStatus = "Done";
+
+        break;
+      }
+    }
+
+    //save to local storage
+    this.save();
+    console.log("array content saved in local storage", this.taskList);
+
+
+    this.render();
+    // if task found it will be returned, otherwise return undefined object
+    return foundTask;
+  }
+
+  save() {
+
+    let tasksJson = JSON.stringify(this.taskList);
+
+    localStorage.setItem("tasks", tasksJson);
+
+    const currentId = String(this.currentID);
+
+    localStorage.setItem("currentId", currentId);
+
+  }
+
+  load(){
+
+        const tasksJson = localStorage.getItem("tasks");
+        if (tasksJson)
+        {
+            this.taskList = JSON.parse(tasksJson);
+        }
+
+        const currentId  = localStorage.getItem("currentId");
+
+        if (currentId)
+        {
+            this.currentID = Number(currentId);
+        }
+
+
+
+  }
+
+
   render() {
     let tasksHtmlList = [];
-    let newTasks = document.getElementById("taskManager");
+    let newTasks = document.getElementById("task-list");
     let taskHTML = "";
 
     for (let i = 0; i < this.taskList.length; i++) {
@@ -114,5 +185,17 @@ class taskManager {
     taskHTML = tasksHtmlList.join("\n");
 
     newTasks.innerHTML = taskHTML;
+
+    console.log(taskHTML);
+
+    const taskList = document.querySelector("#task-list");
+
+    console.log("task-list start2");
+
+    taskList.addEventListener("click", (event) => {
+      console.log("taskList done button event target object", event.target);
+    });
+
+    console.log("task-list end2");
   }
 }
